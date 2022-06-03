@@ -24,4 +24,5 @@ const Chart = ({title, data, dataKey, grid}) => {
 	)
 }
 
+
  export default Chart 
