@@ -1,6 +1,5 @@
 import { Navigate} from 'react-router-dom'
 
- //const auth = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin ;
  const auth = true;
  const PrivateRoute = ({children}) => {
 
