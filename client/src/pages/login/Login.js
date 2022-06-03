@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import "./login.css"
 const initialForm = ({
 	username:"",
@@ -12,26 +14,28 @@ const Login = () => {
 			[name]: value,
 		})
 	}
-	const handleClick = (e) => {
+	const handleSubmit = (e)=>{
 		e.preventDefault();
-		//
 	}
 	return (
-		<div>
-			<input 
-				name="username" 
-				type="text" 
-				placeholder="username"
-				onChange={handleChange}
-			/>
-			<input 
-				name="password" 
-				type="password" 
-				placeholder="password"
-				onChange={handleChange}
-			/>
-			<button onClick={handleClick}>Login</button>
-
+		<div className="login">
+			<form className="loginForm" onSubmit={handleSubmit}>
+				<input 
+					text="text"
+					placeholder="email" 
+					className="loginInput"
+					name="email"
+					onChange={handleChange}
+				/>
+				<input 
+					type="text" 
+					placeholder="password"
+					className="loginInput"
+					name="password"
+					onChange={handleChange}
+				/>
+				<button type="submit" className="loginButton" disabled={false}>Login</button>
+			</form>
 		</div>
 	)
 }
