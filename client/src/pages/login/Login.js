@@ -1,30 +1,34 @@
-import { useState } from 'react';
-
+import { useState, useContext } from 'react';
+import { AuthContext } from "../../context/authContext/AuthContext";
+import { login } from "../../context/authContext/apiCalls";
 import "./login.css"
-const initialForm = ({
+
+const initialForm ={
 	username:"",
 	password:"",
-})
+}
 const Login = () => {
 	const [form, setForm] = useState(initialForm);
+	const { isFetching, dispatch } = useContext(AuthContext);
 	const handleChange = (e) => {
-		let {value,name} = e.target;
+		let {name,value } = e.target;
 		setForm({
 			...form,
-			[name]: value,
+			[name]: value
 		})
 	}
 	const handleSubmit = (e)=>{
 		e.preventDefault();
+		login(form, dispatch);
 	}
 	return (
 		<div className="login">
 			<form className="loginForm" onSubmit={handleSubmit}>
 				<input 
 					text="text"
-					placeholder="email" 
+					placeholder="username" 
 					className="loginInput"
-					name="email"
+					name="username"
 					onChange={handleChange}
 				/>
 				<input 
@@ -34,10 +38,10 @@ const Login = () => {
 					name="password"
 					onChange={handleChange}
 				/>
-				<button type="submit" className="loginButton" disabled={false}>Login</button>
+				<button type="submit" className="loginButton" disabled={isFetching}>Login</button>
 			</form>
 		</div>
 	)
 }
 
- export default Login
+export default Login

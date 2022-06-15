@@ -8,3 +8,6 @@
  .chartTitle{
  	margin-bottom: 20px;
  } 
+ .chartGrid{
+      stroke: rgb(228, 225, 225);
+}

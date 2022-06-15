@@ -44,7 +44,7 @@ import "./userList.css"
  	    renderCell:(params)=>{
  	    	return(
  	    		<>
- 	    			<Link to={"/user/"+params.row.id}>
+ 	    			<Link to={"/dashboard/user/"+params.row.id}>
  	    				<button className="userListEdit">Edit</button>
  	    			</Link>
  	    			<DeleteOutlineIcon className="userListDelete" onClick={()=>handleDelete(params.row.id)}/>
@@ -62,6 +62,7 @@ import "./userList.css"
  		        columns={columns}
  		        pageSize={8}
   		        checkboxSelection
+                className="dataGrid"
  		    /> 
  		</div>
  	)

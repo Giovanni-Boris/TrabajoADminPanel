@@ -9,7 +9,7 @@ import React from 'react'
  		<div className="topbar">
  			<div className="topbarWrapper">
  				<div className="topLeft">
- 					<div className="logo">lamaadmin</div>
+ 					<div className="logo">adminpanel</div>
  				</div>
  				<div className="topRight">
  					<div className="topbarIconContainer">

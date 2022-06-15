@@ -12,7 +12,10 @@ import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline"
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline"
 import ReportIcon from "@mui/icons-material/Report"
 import { Link } from 'react-router-dom'
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/darkModeContext/darkModeContext";
 const Sidebar = () => {
+  const { dispatch } = useContext(DarkModeContext);
  	return (
  		<div className="sidebar">
  			<div className="sidebarWrapper">
@@ -20,7 +23,7 @@ const Sidebar = () => {
  					<h3 className="sidebarTitle">Dashboard</h3>
  					<ul className="sidebarList">
  						<Link to="/dashboard" className="link">
-              <li className="sidebarListItem active">
+              <li className="sidebarListItem">
                 <LineStyleIcon className="sidebarIcon"/>
                 Home
               </li>
@@ -77,7 +80,7 @@ const Sidebar = () => {
              </li>
            </ul>
          </div>
-         <div className="sidebarMenu">
+        <div className="sidebarMenu">
            <h3 className="sidebarTitle">Staff</h3>
            <ul className="sidebarList">
              <li className="sidebarListItem">
@@ -93,7 +96,17 @@ const Sidebar = () => {
                Reports
              </li>
            </ul>
-         </div>
+        </div>
+        <div className="bottom">
+          <div 
+            className="colorOption"
+            onClick={()=> dispatch({type:"LIGHT"})}
+          ></div>
+          <div 
+            className="colorOption"
+            onClick={()=> dispatch({type:"DARK"})}
+          ></div>
+        </div>
  			</div>
  		</div>
  	)

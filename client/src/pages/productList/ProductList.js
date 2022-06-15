@@ -45,7 +45,7 @@ import "./productList.css";
        renderCell: (params) => {
          return (
            <>
-             <Link to={"/product/" + params.row.id}>
+             <Link to={"/dashboard/product/" + params.row.id}>
                <button className="productListEdit">Edit</button>
              </Link>
              <DeleteOutlineIcon
@@ -65,6 +65,7 @@ import "./productList.css";
          columns={columns}
          pageSize={8}
          checkboxSelection
+         className="dataGrid"
        />
      </div>
    );
